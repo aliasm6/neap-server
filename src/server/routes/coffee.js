@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  const coffeeId = parseInt(req.params.id)
+  const coffeeId = parseInt(req.params.id);
   return knex('coffee').where('id', coffeeId).first()
   .then((coffees) => {
     res.status(200).json({
