@@ -1,5 +1,4 @@
 // *** dependencies *** //
-
 const path = require('path');
 const gulp = require('gulp');
 const jshint = require('gulp-jshint');
@@ -22,7 +21,7 @@ const paths = {
   server: path.join('src', 'server', 'server.js')
 };
 
-const lrPort = 35729;
+const lrPort = 35728;
 
 const nodemonConfig = {
   script: paths.server,

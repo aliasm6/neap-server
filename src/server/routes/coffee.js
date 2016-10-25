@@ -31,4 +31,18 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  const coffeeId = parseInt(req.params.id);
+  return knex('coffee').where('id', coffeeId).first()
+  .then((coffees) => {
+    res.status(200).json({
+      status: 'success',
+      data: coffees
+    });
+  })
+  .catch((err) => {
+    return next(err);
+  });
+});
+
 module.exports = router;
